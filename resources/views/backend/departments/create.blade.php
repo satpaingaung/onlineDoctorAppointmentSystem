@@ -9,7 +9,7 @@
     		<h1 class="h3 mb-2 text-gray-800">Create Department </h1>
         </div>
         <div class="col-lg-2">
-            <a href="" class="btn"><i class="fas fa-forward"></i></a>
+            <a href="{{route('departments.index')}}" class="btn btn-primary">Back</a>
 		</div>
     </div>
 

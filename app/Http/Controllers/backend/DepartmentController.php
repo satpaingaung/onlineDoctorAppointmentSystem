@@ -69,6 +69,9 @@ class departmentController extends Controller
     public function edit($id)
     {
         //
+        $department=Department::find($id);
+        //dd($category);
+        return view('backend.departments.edit',compact('department'));
     }
 
     /**
@@ -81,6 +84,17 @@ class departmentController extends Controller
     public function update(Request $request, $id)
     {
         //
+        //validation
+        $request->validate(['name'=> 'required|min:5|max:191']);
+
+       
+        //data update
+        $department=Department::find($id);
+        $department->name=$request->name;
+        $department->save();
+
+        //return
+        return redirect()->route('departments.index');
     }
 
     /**
@@ -92,5 +106,8 @@ class departmentController extends Controller
     public function destroy($id)
     {
         //
+        $department=Department::find($id);
+        $department->delete();
+        return redirect()->route('departments.index');
     }
 }

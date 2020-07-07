@@ -12,4 +12,9 @@ class Department extends Model
     protected $fillable = [
         'name'
     ];
+    //join with doctors table for department_id
+    public function doctors()
+    {
+    	return $this->hasMany('App\Doctor');
+    }
 }

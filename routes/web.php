@@ -13,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
+Route::get('/','frontend\FrontendController@index')->name('index');
+Route::get('checkdoctor','frontend\FrontendController@checkdoctor')->name('checkdoctor');
+
 Route::resource('departments','backend\DepartmentController');
+Route::resource('periods','backend\PeriodController');
+Route::resource('doctors','backend\DoctorController');
+Route::resource('schedules','backend\ScheduleController');
+
+
+

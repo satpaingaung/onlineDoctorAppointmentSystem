@@ -24,9 +24,9 @@
     			<table class="table table-bordered" width="100%" cellspacing="0" id="dataTable">
 				<thead>
 					<tr>
-						<th style="width:5%">No</th>
-						<th style="width:80%">Name</th>
-						<th style="width:15%">Actions</th>
+						<th style="width:3%">No</th>
+						<th style="width:77%">Name</th>
+						<th >Actions</th>
 					</tr>
 				</thead>
 				<tfoot>
@@ -45,12 +45,14 @@
 						<td>{{$row->name}}</td>
 						<td>
 							<div class="d-flex">
-							<a href="#" class="btn "><i class="fas fa-edit text-warning">Edit</i></a>
 							
-							<form action="#" method="post" onsubmit="return confirm('Are you sure?')" > 
+							<a href="{{route('departments.edit',$row->id)}}" class="btn btn-warning">Edit</a>
+							
+							<form action="{{route('departments.destroy',$row->id)}}" method="post" onsubmit="return confirm('Are you sure want to delete department?')" > 
 								@csrf
 								@method('DELETE')
-								<a href="#" type="submit" class="btn text-danger"><i class="fas fa-trash warning">Delete</i></a>
+								<input type="submit" name="btnsubmit" value="Delete" class="btn btn-danger">
+								
 							</form>
 							</div>
 						</td>

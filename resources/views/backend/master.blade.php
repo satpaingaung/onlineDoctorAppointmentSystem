@@ -78,10 +78,10 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Setup:</h6>
-            <a class="collapse-item" href="">Departments</a>
-            <a class="collapse-item" href="">Sections</a>
-            <a class="collapse-item" href="">Doctor List</a>
-            <a class="collapse-item" href="">Schedule List</a>
+            <a class="collapse-item" href="{{route('departments.index')}}">Departments</a>
+            <a class="collapse-item" href="{{route('periods.index')}}">Periods</a>
+            <a class="collapse-item" href="{{route('doctors.index')}}">Doctor List</a>
+            <a class="collapse-item" href="{{route('schedules.index')}}">Schedule List</a>
           </div>
         </div>
       </li>
